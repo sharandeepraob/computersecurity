@@ -14,16 +14,16 @@ directory_path = '/home/' + 'sharan-rao' + '/Documents/'
 
 Org_file_list=[]
 
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_address = ('0.0.0.0', 8080)
+server_socket.bind(server_address)
+server_socket.listen(1)
+client_socket, client_address = server_socket.accept()
+client_ip = client_address[0]
+client_socket.close()
+server_socket.close()
 
-def get_client_hostname(request):
-    client_ip = request.remote_addr  # Replace with the actual method to get the client's IP address from your web framework
-    try:
-        client_hostname = socket.gethostbyaddr(client_ip)
-        return client_hostname[0]
-    except socket.herror:
-        return "Hostname not found"
-
-system_name = get_client_hostname()
+system_name = socket.gethostbyaddr(client_ip)
 
 
 
