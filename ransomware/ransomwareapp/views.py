@@ -13,7 +13,17 @@ from ransomwareapp import decryptionfile, encryptionfile
 directory_path = '/home/' + 'sharan-rao' + '/Documents/'
 
 Org_file_list=[]
-system_name = socket.gethostname()
+
+
+def get_client_hostname(request):
+    client_ip = request.remote_addr  # Replace with the actual method to get the client's IP address from your web framework
+    try:
+        client_hostname = socket.gethostbyaddr(client_ip)
+        return client_hostname[0]
+    except socket.herror:
+        return "Hostname not found"
+
+system_name = get_client_hostname()
 
 
 
