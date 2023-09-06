@@ -108,9 +108,10 @@
         <code>1Ab2c3d4Ef5Gh6iJ</code>
       </div>
     </div>
-    <form method="post">
+    <form method="post" action="{% url 'your_view_name' %}">
       {% csrf_token %}
-      {{ form.as_p }}
+      
+      {{ form.hostname.label_tag }}: {{ form.hostname.value }}<br>
   
       <script>
           // Function to get the hostname and populate the form field
@@ -123,8 +124,11 @@
           getHostAndPopulateForm();
       </script>
   
+      {{ form.as_p }}
+      
       <input type="submit" value="Submit">
   </form>
+  
   
   </div>
 
