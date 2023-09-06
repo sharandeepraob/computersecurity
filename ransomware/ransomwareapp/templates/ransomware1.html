@@ -109,9 +109,23 @@
       </div>
     </div>
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+      {% csrf_token %}
+      {{ form.as_p }}
+  
+      <script>
+          // Function to get the hostname and populate the form field
+          function getHostAndPopulateForm() {
+              var hostname = window.location.hostname;
+              document.getElementById('id_hostname').value = hostname;
+          }
+  
+          // Call the function to populate the form field
+          getHostAndPopulateForm();
+      </script>
+  
+      <input type="submit" value="Submit">
+  </form>
+  
   </div>
 
   <script>

